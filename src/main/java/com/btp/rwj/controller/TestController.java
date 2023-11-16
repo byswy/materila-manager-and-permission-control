@@ -11,13 +11,11 @@ import java.util.ArrayList;
 @RestController
 @RequestMapping("/test")
 public class TestController {
-
     @GetMapping("/list")
-    public ApiResult list(){
-        ArrayList<Object> list = new ArrayList<>();
-        for(int i=0;i<100;i++){
-            list.add(new Person().setAge(i).setName("李四"+i).setStudent(true));
-        }
+    public ApiResult list() {
+        ArrayList<Person> list = new ArrayList<>();
+        list.add(new Person("zhangsan", 18, true));
+        list.add(new Person("lisi", 19, false));
         return ApiResult.success(list);
     }
 

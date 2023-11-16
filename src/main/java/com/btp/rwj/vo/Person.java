@@ -1,5 +1,6 @@
 package com.btp.rwj.vo;
 
+import lombok.AllArgsConstructor;
 import lombok.Getter;
 import lombok.Setter;
 import lombok.experimental.Accessors;
@@ -7,10 +8,11 @@ import lombok.experimental.Accessors;
 @Getter
 @Setter
 @Accessors(chain = true)
+@AllArgsConstructor
 public class Person {
 
-    private String name="张三三";
+    private String name;
     private Integer age;
-    private Boolean student=true;
+    private Boolean student;
 
 }
