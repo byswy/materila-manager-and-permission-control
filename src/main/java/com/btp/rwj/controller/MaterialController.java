@@ -1,11 +1,9 @@
 package com.btp.rwj.controller;
 
-import com.btp.rwj.dao.MaterialDao;
 import com.btp.rwj.service.MaterialService;
 import com.btp.rwj.vo.ApiResult;
 import com.btp.rwj.vo.Material;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.*;
 
 @RestController

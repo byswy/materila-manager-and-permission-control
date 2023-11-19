@@ -1,9 +1,6 @@
 package com.btp.rwj.service;
 
-import com.btp.rwj.dao.MaterialDao;
 import com.btp.rwj.vo.Material;
-import org.apache.ibatis.annotations.Select;
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
