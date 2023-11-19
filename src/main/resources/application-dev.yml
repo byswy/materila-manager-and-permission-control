@@ -1,2 +1,21 @@
 server:
   port: 48006
+
+spring:
+  datasource:
+    driver-class-name: com.mysql.cj.jdbc.Driver #8.X数据库驱动文件
+    #    driver-class-name: com.mysql.jdbc.Driver #5.X数据库驱动文件
+    url: jdbc:mysql://8.130.40.72:3306/btp_training
+    username: btp
+    password: 123456
+
+mybatis:
+  mapper-locations: classpath:mapping/*.xml
+  configuration:
+    map-underscore-to-camel-case: true #避免实体类属性驼峰格式与数据库不一致
+
+#showSql
+logging:
+  level:
+    root: info
+    com.btp.rwj: debug

@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+
+<mapper namespace="com.btp.rwj.dao.MaterialDao">
+    <select id="getById" resultType="com.btp.rwj.vo.Material">
+        select *
+        from material
+        where id = #{id}
+          and is_deleted = 0
+    </select>
+    <select id="getAll" resultType="com.btp.rwj.vo.Material">
+        select *
+        from material
+        where is_deleted = 0
+    </select>
+    <select id="getTypes" resultType="java.lang.String">
+        select material_type
+        from material
+        where is_deleted = 0
+    </select>
+    <delete id="deleteById">
+        update material
+        set is_deleted=1
+        where id = #{id}
+    </delete>
+    <insert id="save">
+        insert into material (material_code, material_name, material_type, material_num, material_price)
+        values (#{materialCode}, #{materialName}, #{materialType}, #{materialNum}, #{materialPrice})
+    </insert>
+    <update id="update">
+        update material
+        set material_code  = #{materialCode},
+            material_name  = #{materialName},
+            material_type  = #{materialType},
+            material_num   = #{materialNum},
+            material_price = #{materialPrice}
+        where material_code = #{materialCode}
+    </update>
+</mapper>
