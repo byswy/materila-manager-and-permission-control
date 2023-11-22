@@ -1,4 +1,4 @@
-package com.btp.rwj.vo;
+package com.btp.rwj.entity;
 
 import lombok.AllArgsConstructor;
 import lombok.Data;

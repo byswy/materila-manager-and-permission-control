@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.btp.rwj.mapper.UserMapper">
+    <select id="login" resultType="com.btp.rwj.entity.UserDetail">
+        select *
+        from rwj_user
+        where username = #{username}
+          and pwd = #{pwd}
+    </select>
+    <select id="getPermissionsByUsername" resultType="java.lang.String">
+        select permission_name
+        from rwj_user u
+                 left outer join rwj_user_permission up on u.id = up.user_id
+                 left outer join rwj_permission p ON p.id = up.permission_id
+        where username = #{username};
+    </select>
+    <select id="getRolesByUsername" resultType="java.lang.String">
+        select role_name
+        from rwj_user u
+                 left outer join rwj_user_role ur on u.id = ur.user_id
+                 left outer join rwj_role p ON p.id = ur.role_id
+        where username = #{username};
+    </select>
+</mapper>

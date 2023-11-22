@@ -1,10 +1,10 @@
-package com.btp.rwj.vo;
+package com.btp.rwj.entity;
 
-import lombok.*;
+import lombok.AllArgsConstructor;
+import lombok.Getter;
+import lombok.NoArgsConstructor;
+import lombok.Setter;
 import lombok.experimental.Accessors;
-
-import java.util.ArrayList;
-import java.util.List;
 
 @Getter
 @Setter
@@ -18,10 +18,5 @@ public class Material {
     private String materialType;
     private double materialNum;
     private double materialPrice;
-
-    public List<Material> tolist() {
-        List<Material> list = new ArrayList<>();
-        list.add(new Material(id, materialCode, materialName, materialType, materialNum, materialPrice));
-        return list;
-    }
+    private boolean exist = true;
 }

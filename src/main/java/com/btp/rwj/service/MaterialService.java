@@ -1,22 +1,19 @@
 package com.btp.rwj.service;
 
-import com.btp.rwj.vo.Material;
-import org.springframework.stereotype.Service;
+import com.btp.rwj.entity.Material;
 
 import java.util.List;
 
-@Service
 public interface MaterialService {
-
-    Material getById(Integer id);
+    Material getById(int id);
 
     List<Material> getAll();
 
     List<String> getTypes();
 
-    boolean deleteById(Integer id);
+    boolean deleteById(int id);
 
-    boolean save(Material material);
+    Material save(Material material);
 
-    boolean update(Material material);
+    Material update(Material material);
 }
