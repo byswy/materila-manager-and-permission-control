@@ -1,6 +1,5 @@
 package com.btp.rwj.domain.VO;
 
-import com.baomidou.mybatisplus.annotation.TableField;
 import lombok.AllArgsConstructor;
 import lombok.Getter;
 import lombok.NoArgsConstructor;

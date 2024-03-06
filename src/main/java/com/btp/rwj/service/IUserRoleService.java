@@ -1,7 +1,6 @@
 package com.btp.rwj.service;
 
 import com.baomidou.mybatisplus.extension.service.IService;
-import com.btp.rwj.domain.DO.UserPermission;
 import com.btp.rwj.domain.DO.UserRole;
 
 import java.util.List;

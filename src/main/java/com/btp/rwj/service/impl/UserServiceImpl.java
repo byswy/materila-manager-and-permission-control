@@ -85,7 +85,7 @@ public class UserServiceImpl extends ServiceImpl<UserMapper, User> implements IU
         roles.forEach(role -> ur.add(new UserRole(null, uid, role)));
         userRoleService.saveBatch(ur);
         List<UserPermission> up = new ArrayList<>();
-        roles.forEach(permission -> up.add(new UserPermission(null, uid, permission)));
+        permissions.forEach(permission -> up.add(new UserPermission(null, uid, permission)));
         userPermissionService.saveBatch(up);
         return true;
     }
