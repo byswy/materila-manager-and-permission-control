@@ -1,28 +1,9 @@
 package com.btp.rwj.mapper;
 
-import com.btp.rwj.entity.Material;
-import org.apache.ibatis.annotations.*;
-
-import java.util.List;
+import com.baomidou.mybatisplus.core.mapper.BaseMapper;
+import com.btp.rwj.domain.DO.Material;
 
 
-@Mapper
-public interface MaterialMapper {
-    List<Material> getAll();
 
-    Material getByCode(String code);
-
-    Material getById(int id);
-
-    List<String> getTypes();
-
-    List<Integer> getIds();
-
-    int deleteById(int id);
-
-    int delete(Material material);
-
-    int save(Material material);
-
-    int update(Material material);
+public interface MaterialMapper extends BaseMapper<Material> {
 }

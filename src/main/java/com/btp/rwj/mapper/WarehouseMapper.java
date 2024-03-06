@@ -1,25 +1,7 @@
 package com.btp.rwj.mapper;
 
-import com.btp.rwj.entity.Warehouse;
-import org.apache.ibatis.annotations.Mapper;
+import com.baomidou.mybatisplus.core.mapper.BaseMapper;
+import com.btp.rwj.domain.DO.Warehouse;
 
-import java.util.List;
-
-@Mapper
-public interface WarehouseMapper {
-    List<Warehouse> getAll();
-
-    Warehouse getByCode(String code);
-
-    Warehouse getById(Integer id);
-
-    List<String> getIds();
-
-    int deleteById(Integer id);
-
-    int delete(Warehouse warehouse);
-
-    int save(Warehouse warehouse);
-
-    int update(Warehouse warehouse);
+public interface WarehouseMapper extends BaseMapper<Warehouse> {
 }

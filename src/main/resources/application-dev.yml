@@ -5,7 +5,7 @@ spring:
   datasource:
     driver-class-name: com.mysql.cj.jdbc.Driver #8.X数据库驱动文件
     #    driver-class-name: com.mysql.jdbc.Driver #5.X数据库驱动文件
-    url: jdbc:mysql://8.130.40.72:3306/btp_training
+    url: jdbc:mysql://8.130.40.72:3306/btp_training?useUnicode=true&characterEncoding=utf-8&autoReconnect=TRUE&useSSL=true&serverTimezone=Asia/Shanghai&rewriteBatchedStatements=true
     username: btp
     password: 123456
   redis:
@@ -21,18 +21,27 @@ spring:
         min-idle: 0
   cache:
     type: redis
-    cache-names: material
-
-
 mybatis-plus:
-  mapper-locations: classpath:mapping/*.xml
+  type-aliases-package: com.btp.rwj.domain #别名扫描包
+  mapper-locations: "classpath*:/mapper/**/*.xml" #mapper.xml文件地址
   configuration:
-    map-underscore-to-camel-case: true #避免实体类属性驼峰格式与数据库不一致
-
+    map-underscore-to-camel-case: true #开启下划线和驼峰的映射
+    cache-enabled: false #关闭二级缓存
+  global-config:
+    db-config:
+      id-type: assign_id #id为雪花算法生成(优先级小于@TableId("",type=))
+      update-strategy: not_null #更新策略：只更新非空字段
+      logic-delete-field: deleted #逻辑删除
 #showSql
 logging:
   level:
     root: info
     com.btp.rwj: debug
-
-salt: 891840248jhjkh
+static:
+  md5:
+    salt: 891840248jh[jkh]'";:;
+  jwt:
+    tokenKey: 2930juewd[]''";
+    expire: 86400000
+  cache:
+    expire: 604800

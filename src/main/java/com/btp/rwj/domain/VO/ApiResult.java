@@ -1,4 +1,4 @@
-package com.btp.rwj.vo;
+package com.btp.rwj.domain.VO;
 
 import lombok.AllArgsConstructor;
 import lombok.Getter;
@@ -10,7 +10,6 @@ import lombok.Setter;
 @AllArgsConstructor
 @NoArgsConstructor
 public class ApiResult {
-
     private Integer errcode;
     private String errmsg;
     private Object data;
@@ -34,5 +33,4 @@ public class ApiResult {
     public static ApiResult success() {
         return new ApiResult(0, null, null);
     }
-
 }

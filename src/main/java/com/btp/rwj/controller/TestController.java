@@ -1,7 +1,6 @@
 package com.btp.rwj.controller;
 
-import com.btp.rwj.vo.ApiResult;
-import com.btp.rwj.entity.Person;
+import com.btp.rwj.domain.VO.ApiResult;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
